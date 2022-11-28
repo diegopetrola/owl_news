@@ -1,0 +1,22 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.hover-underline:hover {
+    text-decoration: underline;
+    color: rgb(88, 88, 88);
+    transition: all .1s ease-out;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+    transition: all .1s ease-out;
+  }
+  .circleBase {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: #4bc475;
+    border: 1px solid #000;
+    align-self: center;
+  }
