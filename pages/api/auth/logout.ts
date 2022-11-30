@@ -5,7 +5,7 @@ import { SessionUser } from "./login";
 
 function logoutRoute(req: NextApiRequest, res: NextApiResponse<SessionUser>) {
     req.session.destroy();
-    res.status(200).json({ isLoggedIn: false, name: "" });
+    res.status(200).json({ isLoggedIn: false, name: "", id: "" });
 }
 
 export default withIronSessionApiRoute(logoutRoute, sessionOptions);
