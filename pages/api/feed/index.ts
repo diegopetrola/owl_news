@@ -8,12 +8,11 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<LinkData[]>
 ) {
-    if (req.method == "GET") {
-        const page = Number(req.query.page) || 0;
+    if (req.method == "POST") {
+        const page = Number(req.body.page) || 1;
         const links = await prisma.link.findMany({
             orderBy: [{ createdAt: "desc" }],
-            take: 5,
-            skip: page * 5,
+            take: 5 * page,
             include: { postedBy: { select: { name: true } } },
         });
         res.status(200).json(links);
