@@ -8,13 +8,13 @@ const CreateLink = () => {
         query: { redirect: "/post/new" },
     });
 
-    if (!user) return <div>Loading</div>;
-
     const [msg, setMsg] = useState("");
     const [msgClass, setMsgClass] = useState("");
     const router = useRouter();
     const [url, setUrl] = useState("");
     const [title, setTitle] = useState("");
+
+    if (!user) return <div>Loading</div>;
 
     return (
         <>
